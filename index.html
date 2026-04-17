@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クラブ診断</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>クラブ診断</h1>
+  
+  <div class="card">
+    <p>希望するタイプ</p>
+    <div class="btn-group">
+      <button class="type-btn active" onclick="setType('all', this)">どちらでも</button>
+      <button class="type-btn" onclick="setType('sports', this)">運動部</button>
+      <button class="type-btn" onclick="setType('culture', this)">文化部</button>
+    </div>
+  </div>
+
+  <div id="sliders"></div>
+
+  <button class="main" id="submitBtn" onclick="calculate()">診断する</button>
+
+  <div id="result"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
