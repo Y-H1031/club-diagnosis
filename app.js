@@ -1,7 +1,7 @@
 // =========================
 // 設定（GASのウェブアプリURL）
 // =========================
-const GAS_URL = "https://script.google.com/macros/s/AKfycbygvMJlRqmVNetyywKifvMFdZv_gIIzuJXigR86Huq9NIUADvi2cnPIf0bWmGDziMEI7w/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbz_Prrgz0bNZozUXZjmVlJzyhMOcwpPHQMeFUXPaOBfkPJq1XFNKo6JFn39VQNlWC1eQQ/exec";
 
 let selectedType = "all";
 let chartInstances = []; 
