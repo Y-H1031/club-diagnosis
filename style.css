@@ -1,0 +1,216 @@
+/* =========================
+   ダークモード & MBTI風デザイン
+   ========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background-color: #18181B; /* 深いダークグレー */
+  color: #F4F4F5;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  margin: 0;
+  padding: 15px;
+}
+
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #27272A; /* 背景より一段明るいカード色 */
+  border-radius: 24px;
+  padding: 25px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.4em;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+/* ーーー 質問グループ・セクション ーーー */
+.form-group {
+  margin-bottom: 20px;
+  background: #3F3F46;
+  padding: 18px;
+  border-radius: 16px;
+}
+.section-title {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #E4E4E7;
+}
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+  color: #E4E4E7;
+}
+
+/* ーーー サークルタイプ選択ボタン（2段レイアウト） ーーー */
+.type-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.type-btn {
+  background: #18181B;
+  color: #A1A1AA;
+  border: 1px solid #52525B;
+  border-radius: 20px;
+  padding: 12px 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-all {
+  width: 100%; /* 1段目：横幅いっぱい */
+  font-size: 1em;
+}
+.btn-sub {
+  width: calc((100% - 20px) / 3); /* 2段目：3等分 */
+  font-size: 0.85em;
+}
+.type-btn.active {
+  background: linear-gradient(135deg, #8B5CF6, #6D28D9); /* MBTI風パープル */
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+/* ーーー プルダウン ーーー */
+select {
+  width: 100%;
+  background: #18181B;
+  color: #F4F4F5;
+  border: 1px solid #52525B;
+  border-radius: 12px;
+  padding: 12px 15px;
+  font-size: 1em;
+  appearance: none;
+  outline: none;
+}
+
+/* ーーー 重視する項目（チェックボックス） ーーー */
+.priority-section {
+  background: #3F3F46;
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+}
+.priority-title {
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  font-size: 0.95em;
+  color: #8B5CF6; 
+}
+.priority-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.priority-grid label {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: #E4E4E7;
+  cursor: pointer;
+}
+.priority-grid input[type="checkbox"] {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  accent-color: #8B5CF6;
+}
+
+/* ーーー 診断ボタン ーーー */
+.main {
+  width: 100%;
+  background: linear-gradient(135deg, #10B981, #059669); /* ミントグリーン系 */
+  color: white;
+  padding: 16px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+.main:disabled {
+  background: #52525B;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ーーー 診断結果カード ーーー */
+.result-card {
+  background: #3F3F46;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #52525B;
+  text-align: center;
+}
+.result-rank {
+  color: #A1A1AA;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.result-name {
+  font-size: 1.4em;
+  display: inline-block;
+  margin: 10px 0;
+  color: #fff;
+}
+.result-score {
+  color: #10B981;
+  font-size: 1.3em;
+}
+
+/* マッチ度詳細 */
+.match-details {
+  background: #27272A;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  margin: 15px 0;
+  border: 1px solid #52525B;
+  line-height: 1.7;
+  text-align: left;
+}
+.match-good { color: #34D399; font-weight: bold; }
+.match-ok { color: #FBBF24; font-weight: bold; }
+.match-bad { color: #F87171; font-weight: bold; }
+.match-text { color: #E4E4E7; font-weight: normal; }
+
+/* SNSボタン */
+.sns-container {
+  margin: 15px 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sns-btn {
+  text-decoration: none;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 1.05em;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+}
+.sns-insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.sns-x { background: #000; border: 1px solid #52525B; }
